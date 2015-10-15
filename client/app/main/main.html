@@ -1,21 +1,22 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="panel-container">
-  <div class="panel panel-default" 
-       ng-repeat="thing in awesomeThings" >
-      <div class="panel-body">
-	      <md-card>
-	      <md-card-content>
-	        <h2 class="md-title">{{thing.name}}</h2>
-	        <p>
-	          {{thing.info}}
-	        </p>
-	      </md-card-content>
-	      <div class="md-actions" layout="row" layout-align="end center">
-	        <md-button>Like</md-button>
-	        <md-button>Share</md-button>
-	      </div>
-	    </md-card>
+<div class="container">
+  <div class="row" ng-repeat="thing in awesomeThings">
+    <div class="col s12 m11">
+      <div class="card">
+        <div class="card-image">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <h1>{{thing.name}}</h1>
+          <p>{{thing.info}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+           <md-button>Like</md-button>
+        <md-button>Share</md-button>
+        </div>
       </div>
+    </div>
   </div>
 </div>
