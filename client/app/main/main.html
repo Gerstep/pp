@@ -1,5 +1,21 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<md-list-item class="md-2-line" ng-repeat="thing in awesomeThings">
-	{{thing.info}} -- {{thing.name}}
-</md-list-item>
+<div class="panel-container">
+  <div class="panel panel-default" 
+       ng-repeat="thing in awesomeThings" >
+      <div class="panel-body">
+	      <md-card>
+	      <md-card-content>
+	        <h2 class="md-title">{{thing.name}}</h2>
+	        <p>
+	          {{thing.info}}
+	        </p>
+	      </md-card-content>
+	      <div class="md-actions" layout="row" layout-align="end center">
+	        <md-button>Like</md-button>
+	        <md-button>Share</md-button>
+	      </div>
+	    </md-card>
+      </div>
+  </div>
+</div>

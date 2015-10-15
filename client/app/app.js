@@ -16,6 +16,22 @@ angular.module('ppApp', [
     $httpProvider.interceptors.push('authInterceptor');
   })
 
+  .config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('amber', {
+      'default': '400',
+      'hue-1': '100',
+      'hue-2': '600',
+      'hue-3': 'A100'
+    })
+    .accentPalette('red', {
+      'default': '400'
+    })
+    .warnPalette('red', {
+      'default': '400'
+    });
+  })
+
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
     return {
       // Add authorization token to headers
