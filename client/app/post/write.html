@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <form class="col s12" name="form" ng-submit="addPost(form)">
+      <div class="row">
+      <div>
+        <div class="input-field col s11">
+          <input placeholder="Название" id="title" type="text" class="validate" name="title" ng-model="post.title">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s11">
+          <textarea id="icon_prefix2" class="materialize-textarea" name="text" ng-model="post.text"></textarea>
+        </div>
+      </div>
+<!--       <div class="row">
+        <div class="file-field input-field">
+	      <div class="btn">
+	        <span>File</span>
+	        <input type="file">
+	      </div>
+	      <div class="file-path-wrapper">
+	        <input class="file-path validate" type="text">
+	      </div>
+	    </div>
+	  </div> -->
+    <p>
+      <input type="checkbox" id="test6" checked="checked" />
+      <label for="test6">Published</label>
+    </p>
+<p />
+<p />
+<p />
+	<div class="row center">
+		<button class="waves-effect waves-light btn-large amber lighten-3"><i class="material-icons left">cloud</i>Сохранить</a>
+		</button>
+
+		<button class="btn-large waves-effect waves-light amber darken-3" type="submit" name="action">Опубликовать
+		<i class="material-icons right">send</i>
+		</button>
+	</div>
+    </form>
+  </div>
+ </div>

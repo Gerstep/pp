@@ -3,11 +3,14 @@
 angular.module('ppApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Start',
-      'link': '/'
+      'title' : 'Start',
+      'link'  : '/'
     }, {
-      'title': 'About',
-      'link': '/about'
+      'title' : 'Write',
+      'link'  : '/write'
+    }, {
+      'title' : 'About',
+      'link'  : '/about'
     }];
 
     $scope.isLoggedIn = Auth.isLoggedIn;

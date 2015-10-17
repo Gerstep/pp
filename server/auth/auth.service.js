@@ -35,6 +35,17 @@ function isAuthenticated() {
     });
 }
 
+//
+// Authorship check
+//
+
+  function isAuthor(){
+    return compose()
+      .use(function checkAuthorship(req, res, next) {
+        next();
+      });
+  }
+
 /**
  * Checks if the user role meets the minimum requirements of the route
  */
@@ -74,3 +85,4 @@ exports.isAuthenticated = isAuthenticated;
 exports.hasRole = hasRole;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;
+exports.isAuthor = isAuthor;
