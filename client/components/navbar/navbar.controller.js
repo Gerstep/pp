@@ -5,6 +5,9 @@ angular.module('ppApp')
     $scope.menu = [{
       'title': 'Start',
       'link': '/'
+    }, {
+      'title': 'About',
+      'link': '/about'
     }];
 
     $scope.isLoggedIn = Auth.isLoggedIn;

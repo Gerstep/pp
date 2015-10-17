@@ -1,6 +1,10 @@
 'use strict';
 
 angular.module('ppApp')
+  .controller('AboutCtrl', function ($scope, $http) {
+
+  })
+
   .controller('MainCtrl', function ($scope, $http) {
     $scope.awesomeThings = [];
 
