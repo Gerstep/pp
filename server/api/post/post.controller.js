@@ -22,16 +22,17 @@ exports.show = function(req, res) {
 
 // Creates a new post in the DB.
 exports.create = function(req, res) {
-  Post.create(req.body, function(err, post) {
-    var newPost = new Post(req.body);
-    newPost.save(function(err, post) {
-      res.json(post);
-    });
-    console.log(post);
 
-    // if(err) { return handleError(res, err); }
-    // return res.status(201).json(post);
-  });
+  //   var newPost = new Post(req.body);
+  //   newPost.save(function(err, post) {
+  //     res.json(post);
+  //   });
+  //     console.log(post);
+
+  // Post.create(req.body, function(err, post) {
+  //   // if(err) { return handleError(res, err); }
+  //   // return res.status(201).json(post);
+  // });
 };
 
 // Updates an existing post in the DB.

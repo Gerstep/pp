@@ -2,6 +2,8 @@ http://materializecss.com/getting-started.html
 
 advanved: https://github.com/knofler/angular-fullstack-base
 
+https://github.com/Awk34/aksite
+
 == App Structure ==
 
 - Authors
