@@ -15,11 +15,5 @@ var PostSchema = new Schema({
  *  Validate post
  */
 
-  PostSchema
-  	.path('title')
-  	.validate(function(title) {
-  		if (title.length < 5) respond(false);
-  		respond(true);
-  	}, 'Title is too short')
 
 module.exports = mongoose.model('Post', PostSchema);

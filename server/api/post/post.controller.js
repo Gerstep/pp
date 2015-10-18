@@ -22,12 +22,13 @@ exports.show = function(req, res) {
 
 // Creates a new post in the DB.
 exports.create = function(req, res) {
+  var newPost = new Post(req.body);
 
-  //   var newPost = new Post(req.body);
-  //   newPost.save(function(err, post) {
-  //     res.json(post);
-  //   });
-  //     console.log(post);
+  newPost
+    .save(function(err, post) {
+      res.json(post);
+      console.log(post);
+    });
 
   // Post.create(req.body, function(err, post) {
   //   // if(err) { return handleError(res, err); }
