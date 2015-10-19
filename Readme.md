@@ -2,7 +2,9 @@ http://materializecss.com/getting-started.html
 
 advanved: https://github.com/knofler/angular-fullstack-base
 
-https://github.com/Awk34/aksite
+personal website: https://github.com/Awk34/aksite
+
+comment implementation: https://github.com/VictorSS/app-angular-fullstack
 
 == App Structure ==
 

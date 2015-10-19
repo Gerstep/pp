@@ -1,6 +1,8 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
+  <h3>Профиль пользователя {{user.name}}</h3>
+
   <div class="row" ng-repeat="post in posts">
     <div class="col s12 m11">
       <div class="card">
@@ -12,8 +14,8 @@
           <p>{{post.text}}</p>
         </div>
         <div class="card-action">
-          <a ng-href="/user/{{post.created_by.id}}"><i>{{post.created_by.name}} ID:{{post.created_by.id}}</i></a>
-          <md-button>лайк нах!</md-button>
+          <a href="#"><i>{{post.created_by.name}} / </i></a>
+          <md-button>{{post.created_by.id}} // </md-button>
           <a class="waves-effect waves-teal btn-flat" ng-if="post.created_by.id == currentUser._id" ng-href="/post/{{post._id}}">Редактировать<i class="material-icons right">edit</i></a>
         </div>
       </div>

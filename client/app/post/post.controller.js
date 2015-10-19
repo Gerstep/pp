@@ -15,7 +15,7 @@ angular.module('ppApp')
     $scope.currentUser = Auth.getCurrentUser();
 
     if(!$stateParams.postId || $stateParams.postId === 'new') {
-    	console.log('Creating new post');
+    	console.log('Creating new post by user with id: ' + $scope.currentUser._id);
     	$scope.post = {
 	    	title : 'Без названия',
 	    	text  : 'Без содержания',

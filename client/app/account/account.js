@@ -18,5 +18,10 @@ angular.module('ppApp')
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsCtrl',
         authenticate: true
+      })
+      .state('userInfo', {
+        url: '/user/:userId',
+        templateUrl: 'app/account/profile/profile.html',
+        controller: 'UserProfileCtrl'
       });
   });

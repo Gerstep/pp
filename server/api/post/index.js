@@ -9,6 +9,7 @@ var router = express.Router();
 
 router.get('/', controller.index);
 router.get('/:id', controller.show);
+router.get('/author/:id', controller.showPostsBy);
 router.post('/', controller.create);
 router.put('/:id', auth.isAuthor(), controller.update);
 router.delete('/:id', auth.isAuthor(), controller.destroy);

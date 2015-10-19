@@ -20,6 +20,13 @@ exports.show = function(req, res) {
   });
 };
 
+exports.showPostsBy = function(req, res){
+  Post.find({ 'created_by.id' : req.params.id }, function(err, posts) {
+    if(err) { return handleError(res, err); }
+    return res.status(200).json(posts);
+  })
+};
+
 // Creates a new post in the DB.
 exports.create = function(req, res) {
   var newPost = new Post(req.body);
