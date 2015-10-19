@@ -1,3 +1,5 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+{{foo}}
 <div class="container">
   <div class="row">
     <form class="col s12" name="form" ng-submit="addPost(form)">
@@ -43,3 +45,8 @@
  </div>
 
  {{posts}}
+
+ <p />
+ <p />
+
+ {{form.title.$viewValue}}

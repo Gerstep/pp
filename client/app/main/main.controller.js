@@ -1,22 +1,21 @@
 'use strict';
 
 angular.module('ppApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http, Auth) {
+    /**
+      * Getting current user
+    **/
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    $scope.currentUser = Auth.getCurrentUser();
+   // $scope.isEditable = 
+   
+    /**
+      * Loading list of posts
+    **/
+
+    $scope.posts = [];
+
+    $http.get('/api/posts').success(function(posts) {
+      $scope.posts = posts;
     });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
   });

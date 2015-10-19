@@ -1,20 +1,57 @@
 'use strict';
 
 angular.module('ppApp')
-  .controller('PostCtrl', function ($scope, $http) {
+  .controller('PostCtrl', function ($scope, $http, $state, $stateParams, Auth) {
     $scope.posts = [];
 
     $http.get('/api/posts').success(function(posts) {
       $scope.posts = posts;
     });
 
-    console.log(form);
+    /**
+			* Submitting a new post
+    **/
 
-  	$scope.addPost = function(form){
-  		//$scope.post = form;
-  		
+    $scope.currentUser = Auth.getCurrentUser();
 
-  		//$scope.post = 'post';
-      $http.post('/api/posts', { title: $scope.form });
+    if(!$stateParams.postId || $stateParams.postId === 'new') {
+    	console.log('Creating new post');
+    	$scope.post = {
+	    	title : 'Без названия',
+	    	text  : 'Без содержания',
+	    	created_by : {
+	    		name: $scope.currentUser.name,
+	        id: $scope.currentUser._id,
+	    	},
+	    	date : new Date(),
+	    	image : undefined,
+	    	active : true
+    	};
+    	$scope.newPost = true;
+    } else {
+    	console.log('Editing post');
+      $http.get('/api/posts/' + $stateParams.postId)
+	      .success(function(res) {
+          $scope.post = res;
+	      });
+    }
+
+
+  	$scope.addPost = function(){
+  		let saveData = $scope.post;
+	  	console.log(saveData);
+
+
+  		if(!$scope.newPost) {
+  			console.log(form);
+  		} else {
+	      $http.post('/api/posts', saveData)
+	      	.then(function successCallback(res){
+	      		$state.go('main');
+	      	})
+	      	.then(function errorCallback(res){
+	      		console.log('ERROR with POST /api/posts');
+	      });
+    	}
   	};
   });

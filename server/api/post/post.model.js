@@ -6,7 +6,11 @@ var mongoose = require('mongoose'),
 var PostSchema = new Schema({
   title: String,
   text: String,
-  created_by: String,
+  created_by: {
+    name: String,
+    id: Schema.ObjectId
+  },
+  date: Date,
   image: String,
   active: Boolean
 });
