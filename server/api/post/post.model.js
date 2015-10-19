@@ -12,12 +12,12 @@ var PostSchema = new Schema({
   },
   date: Date,
   image: String,
+  tags: [String],
   active: Boolean
 });
 
 /**
  *  Validate post
  */
-
 
 module.exports = mongoose.model('Post', PostSchema);

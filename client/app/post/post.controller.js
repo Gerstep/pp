@@ -29,7 +29,7 @@ angular.module('ppApp')
     	};
     	$scope.newPost = true;
     } else {
-    	console.log('Editing post');
+    	console.log('Editing post with ID ' + $stateParams.postId);
       $http.get('/api/posts/' + $stateParams.postId)
 	      .success(function(res) {
           $scope.post = res;
@@ -40,14 +40,18 @@ angular.module('ppApp')
   	$scope.addPost = function(){
   		let saveData = $scope.post;
 	  	console.log(saveData);
-
+	  	
   		if(!$scope.newPost) {
-  			console.log(form);
+  			$http.put('api/posts/' + $scope.post._id, saveData)
+	      	.then(function successCallback(res){
+	      		console.log('Edited a post named ' + $scope.post._id + ' with following data: ' + saveData);
+	      		$state.go('main');
+	      });
   		} else {
 	      $http.post('/api/posts', saveData)
 	      	.then(function successCallback(res){
-	      		$state.go('main');
 	      		console.log('Submitted a new post with following data: ' + saveData);
+	      		$state.go('main');
 	      });
     	}
   	};

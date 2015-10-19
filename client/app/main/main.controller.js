@@ -7,8 +7,7 @@ angular.module('ppApp')
     **/
 
     $scope.currentUser = Auth.getCurrentUser();
-   // $scope.isEditable = 
-   
+
     /**
       * Loading list of posts
     **/
