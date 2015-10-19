@@ -7,5 +7,10 @@ angular.module('ppApp')
         url: '/write',
         templateUrl: 'app/post/write.html',
         controller: 'PostCtrl'
+      })
+      .state('editPost', {
+        url: '/post/:postId',
+        templateUrl: 'app/post/write.html',
+        controller: 'PostCtrl'
       });
   });

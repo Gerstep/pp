@@ -12,9 +12,9 @@
           <p>{{post.text}}</p>
         </div>
         <div class="card-action">
-          <a href="#"><i>{{post.created_by.name}}</i></a>
+          <a href="#"><i>{{post.created_by.name}} / {{currentUser.name}}</i></a>
           <md-button>Like</md-button>
-          <md-button>Share</md-button>
+          <a class="waves-effect waves-teal btn-flat" ng-if="post.created_by.id == currentUser._id" ng-href="/post/{{post._id}}">Редактировать<i class="material-icons right">edit</i></a>
         </div>
       </div>
     </div>

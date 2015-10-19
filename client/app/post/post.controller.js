@@ -41,16 +41,13 @@ angular.module('ppApp')
   		let saveData = $scope.post;
 	  	console.log(saveData);
 
-
   		if(!$scope.newPost) {
   			console.log(form);
   		} else {
 	      $http.post('/api/posts', saveData)
 	      	.then(function successCallback(res){
 	      		$state.go('main');
-	      	})
-	      	.then(function errorCallback(res){
-	      		console.log('ERROR with POST /api/posts');
+	      		console.log('Submitted a new post with following data: ' + saveData);
 	      });
     	}
   	};
