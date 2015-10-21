@@ -12,6 +12,10 @@ angular.module('ppApp')
       * Loading list of posts
     **/
 
+    $scope.like = function() {
+      $http.post('api/likes/', { 'text' : 'like1'});
+    };
+
     $scope.posts = [];
 
     $http.get('/api/posts')

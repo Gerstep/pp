@@ -14,8 +14,7 @@
           <p>{{post.text}}</p>
         </div>
         <div class="card-action">
-          <a href="#"><i>{{post.created_by.name}} / </i></a>
-          <md-button>{{post.created_by.id}} // </md-button>
+          <a href="#"><i>{{post.created_by.name}}</i></a>
           <a class="waves-effect waves-teal btn-flat" ng-if="post.created_by.id == currentUser._id" ng-href="/post/{{post._id}}">Редактировать<i class="material-icons right">edit</i></a>
         </div>
       </div>

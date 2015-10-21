@@ -8,13 +8,13 @@
           <span class="card-title"></span>
         </div>
         <div class="card-content">
-          <h1>{{post.title}}</h1>
+          <h3><a ng-href="/post/{{post._id}}">{{post.title}}</a></h3>
           <p>{{post.text}}</p>
         </div>
         <div class="card-action">
-          <a ng-href="/user/{{post.created_by.id}}"><i>{{post.created_by.name}} ID:{{post.created_by.id}}</i></a>
-          <md-button>лайк нах!</md-button>
-          <a class="waves-effect waves-teal btn-flat" ng-if="post.created_by.id == currentUser._id" ng-href="/post/{{post._id}}">Редактировать<i class="material-icons right">edit</i></a>
+          <a ng-href="/user/{{post.created_by.id}}"><i>{{post.created_by.name}}</i></a>
+          <a ng-click="like(post._id, currentUser._id)" class="waves-effect waves-amber btn-flat">лайк!</a>
+          <a class="waves-effect waves-teal btn-flat" ng-if="post.created_by.id == currentUser._id" ng-href="/edit/{{post._id}}">Редактировать<i class="material-icons right">edit</i></a>
         </div>
       </div>
     </div>

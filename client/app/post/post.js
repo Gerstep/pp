@@ -9,8 +9,13 @@ angular.module('ppApp')
         controller: 'PostCtrl'
       })
       .state('editPost', {
-        url: '/post/:postId',
+        url: '/edit/:postId',
         templateUrl: 'app/post/write.html',
+        controller: 'PostCtrl'
+      })
+      .state('showPost', {
+        url: '/post/:postId',
+        templateUrl: 'app/post/post.html',
         controller: 'PostCtrl'
       });
   });
